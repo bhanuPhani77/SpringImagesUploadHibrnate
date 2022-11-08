@@ -21,9 +21,11 @@
   padding: 0 4px;
 }
         </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </head>
 <body>
-<div>
+<div class="text-center">
     
         <!-- <tr>
         <th>User Id</th>
@@ -35,10 +37,11 @@
 <!-- <td>${user.userId}</td>
 <td id="name">${user.fullName}</td> -->
 
-    <img class="column" src="data:image/png;base64,${user.base64Image}" width="200" height="125" onclick="enlargeImg()" id="img1"></td>
+    <img class="img-thumbnail" src="data:image/png;base64,${user.base64Image}" width="100" height="125" onclick="enlargeImg()" id="img1"></td>
 
-</c:forEach>
-
+</c:forEach><br>
+<button class="btn btn-primary"><a href="/" style="text-decoration: none;color:white;">Go To Home</a> </button>
+<button class="btn btn-primary"><a href="/saveuser" style="text-decoration: none;color:white;">upload image</a> </button>
 </div>
 
 <!-- script to set display property -->

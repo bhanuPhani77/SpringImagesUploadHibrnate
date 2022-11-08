@@ -5,13 +5,11 @@ import java.util.List;
 import javax.servlet.annotation.MultipartConfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.bhanu.dto.User_Dto;
 import com.bhanu.entity.UserDet;
@@ -35,8 +33,11 @@ public class userController {
 	}
 
 	@PostMapping("/savesuccess")
-	public String userSaved(@ModelAttribute("user_Dto") User_Dto user_Dto, Model model) throws Throwable {
+	public String userSaved(@ModelAttribute("user_Dto") User_Dto user_Dto, Model model, BindingResult  result) throws Throwable {
 		UserDet det = new UserDet();
+		if(result.hasErrors()) {
+			return "uploadimage";
+		}
 		det.setFullName(user_Dto.getFullName());
 		det.setImage(user_Dto.getImage().getBytes());
 		impl.userDetSave(det);
