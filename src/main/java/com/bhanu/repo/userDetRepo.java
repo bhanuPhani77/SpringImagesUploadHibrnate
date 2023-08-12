@@ -10,5 +10,7 @@ import com.bhanu.entity.UserDet;
 public interface userDetRepo extends JpaRepository<UserDet, Integer>{
 	@Query("select u from UserDet u where u.userId = :userId")
 	public List<UserDet> findImageById(@Param("userId")Integer userId);
+	UserDet findRules();
+	//rulenamespace
 	
 }

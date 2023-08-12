@@ -18,5 +18,6 @@ public class UserDet {
 	@Column(name="IMAGE",columnDefinition = "LONGBLOB")
 	private byte[] image;
 	private String base64Image;
+	private String email;
 	
 }
